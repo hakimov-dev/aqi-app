@@ -109,7 +109,7 @@ export default Vue.extend({
       ];
 
       if (coConcentration < 0 || coConcentration > 50.4) {
-        return "Invalid CO concentration";
+        this.$notification.error({message: "Invalid CO concentration"})
       }
 
       for (let i = 0; i < breakpoints.length - 1; i++) {
@@ -128,8 +128,6 @@ export default Vue.extend({
            this.aqi = Math.round(aqi)
         }
       }
-
-      // return "Unable to calculate AQI";
     },
   },
 });
