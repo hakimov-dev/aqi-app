@@ -52,27 +52,27 @@ export function getAirQualityFromAQI(aqi: number) {
     const thresholds: AirQualityAboutData[] = [
       {
         advice: 'Enjoy the fresh air!',
-        additionalText: 'The air quality is good. It is a great time to be outdoors.'
+        additionalText: 'The air quality is excellent, with little to no health risks. The air is clean and fresh, and it is safe for outdoor activities. People of all ages and health conditions can breathe comfortably.'
       },
       {
         advice: 'Moderate outdoor activities are okay.',
-        additionalText: 'The air quality is moderate. If you are sensitive to air pollution, consider reducing prolonged or heavy outdoor activities.'
+        additionalText: 'The air quality is generally acceptable, but there may be a moderate level of pollutants present. This may cause minor discomfort for sensitive individuals such as those with respiratory issues, children, and the elderly. Most people can continue with their regular activities without significant adverse effects.'
       },
       {
         advice: 'Sensitive groups should limit outdoor exposure.',
-        additionalText: 'The air quality is unhealthy for sensitive groups. If you have respiratory issues or other health conditions, it is advisable to reduce outdoor exposure.'
+        additionalText: 'The air quality is unhealthy for sensitive groups, including children, older adults, and individuals with respiratory or heart conditions. They may experience symptoms such as coughing, throat irritation, and shortness of breath. The general population is less likely to be affected, but it is advisable to reduce prolonged or heavy outdoor exertion.'
       },
       {
         advice: 'Avoid outdoor activities.',
-        additionalText: 'The air quality is unhealthy. It is recommended to avoid prolonged or heavy exertion outdoors, especially if you have health problems.'
+        additionalText: 'The air quality is unhealthy for everyone, and the general population may experience adverse health effects. People with respiratory or heart conditions may experience more severe symptoms such as difficulty breathing, wheezing, and reduced lung function. Outdoor activities should be limited, especially for sensitive individuals.'
       },
       {
         advice: 'Stay indoors and protect your health.',
-        additionalText: 'The air quality is very unhealthy. It is crucial to remain indoors, minimize physical exertion, and keep windows and doors closed.'
+        additionalText: 'The air quality is very unhealthy, posing a significant risk to health. The entire population may experience serious health effects. Individuals with respiratory or heart conditions, as well as children and older adults, are at a higher risk of severe symptoms. Outdoor activities should be avoided, and it is advisable to stay indoors with proper air filtration.'
       },
       {
         advice: 'Protect your health and avoid outdoor exposure.',
-        additionalText: 'The air quality is hazardous. Everyone should avoid all outdoor activities and stay indoors to protect their health.'
+        additionalText: 'The air quality is hazardous, and it presents a severe health risk to the entire population. The pollution levels are extremely high, and everyone may experience severe respiratory issues, including difficulty breathing, coughing, and aggravated symptoms. It is crucial to stay indoors, keep windows closed, and use air purifiers or filtration systems.'
       }
     ];
   
