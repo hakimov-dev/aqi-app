@@ -36,7 +36,8 @@
       </div>
     </div>
   </div>
-  <!-- <Home /> -->
+  <!-- Loading page -->
+  <Loading v-else/>
 </template>
 
 <script lang="ts">
