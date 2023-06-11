@@ -53,6 +53,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { getIP, getAbout, getAQI } from "@/services/index";
+import { getAirQualityFromAQI } from "@/utils/index"
 
 export default Vue.extend({
   name: "IndexPage",
