@@ -1,4 +1,9 @@
-# air-quality
+# Air Quality Index (AQI) Tracker ✨
+
+![Screenshot_1](https://github.com/hakimov-dev/aqi-app/assets/83240328/dc95a284-934c-4dd3-8305-a3cd46187a1e)
+
+## About of application 📝
+The Air Quality Index (AQI) Tracker app is a comprehensive and user-friendly tool designed to provide real-time information about the air quality in your location. Whether you are concerned about pollution, allergies, or just want to stay informed, this app will help you make informed decisions to protect your health and well-being. 👨‍💻
 
 ## Build Setup
 
