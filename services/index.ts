@@ -1,5 +1,5 @@
-import axios from 'axios'
+import { api } from '@/api'
 
 export function getIP() : object{
-   return axios.get(`${process.env.GET_IP_API}`)
+   return api.get(`${process.env.GET_IP_API}`)
 }
