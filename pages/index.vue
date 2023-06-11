@@ -68,7 +68,7 @@ export default Vue.extend({
     getIPInfo(about: object){
        getAbout(about?.ip)
          .then(res => {
-          this.value = res.city
+          this.value = res?.city
          })
     }
   },
