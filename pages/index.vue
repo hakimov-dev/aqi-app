@@ -47,11 +47,19 @@ export default Vue.extend({
   name: "IndexPage",
 
   mounted() {
-    console.log('mounted')
+  },
+
+  methods: {
+    getIPAdress(){
       getIP()
       .then(res => {
-       console.log(res)
+       this.getIPInfo(res.ip)
       })
+    },
+
+    getIPInfo(ip: string){
+      
+    }
   },
 });
 </script>
