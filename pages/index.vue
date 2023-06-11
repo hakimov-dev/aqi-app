@@ -70,6 +70,13 @@ export default Vue.extend({
          .then(res => {
           this.value = res?.city
          })
+    },
+
+    searchCity(city: String){
+        getAQI(city)
+        .then((res) => {
+          console.log(res)
+        })
     }
   },
 });
