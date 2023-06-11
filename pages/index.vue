@@ -17,7 +17,7 @@
             >
           </template>
         </a-input-search>
-         <h1 class="w-auto ml-0 mt-1 text-xl font-medium float-left">AQI: 1029</h1>
+         <h1 class="w-auto ml-0 mt-1 text-xl font-medium float-left">AQI: {{ aqi }}</h1>
       </div>
     </div>
     <div class="body h-auto py-2 flex flex-col items-center justify-center">
