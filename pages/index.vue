@@ -18,7 +18,7 @@
           </template>
         </a-input-search>
         <h1 class="w-auto ml-0 mt-1 text-xl font-medium float-left">
-          AQI: {{ aqi }}
+          AQI: {{ aqi !== 0 ? aqi : "Loading..." }}
         </h1>
       </div>
     </div>
