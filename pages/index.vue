@@ -2,8 +2,9 @@
   <div v-if="!loading" class="flex flex-col w-full">
     <headerNav :data="airQualityData" />
     <div
-    :class="`bg-${airQualityData.color}-300`"  
-    class="header h-[50vh] flex items-center justify-center">
+      :class="`bg-${airQualityData.color}-300`"
+      class="header h-[50vh] flex items-center justify-center"
+    >
       <div class="container mx-auto flex flex-col items-center justify-start">
         <a-input-search
           class="w-[50%] mx-auto mt-10 input"
@@ -27,31 +28,14 @@
         </h1>
       </div>
     </div>
-    <div class="body h-auto py-2 mt-6 flex flex-col items-center justify-center">
+    <div
+      class="body h-auto py-2 mt-6 flex flex-col items-center justify-center"
+    >
       <div class="container w-[50%] border-2 text-center shadow-xl p-2">
         <h1 class="text-xl font-medium">About of result AQI</h1>
         <p class="text-base font-medium mt-3">
           {{ about }}
         </p>
-        <!-- <a-tabs v-model:activeKey="activeKey" type="card">
-          <a-tab-pane key="1" tab="About air quality">
-            <p class="content mx-auto py-3 font-medium text-lg">
-              The air quality is generally acceptable, but there may be a
-              moderate level of pollutants present. This may cause minor
-              discomfort for sensitive individuals such as those with
-              respiratory issues, children, and the elderly. Most people can
-              continue with their regular activities without significant adverse
-              effects.
-            </p>
-          </a-tab-pane>
-          <a-tab-pane key="2" tab="Advices">
-            <p class="content mx-auto py-3 font-medium text-lg">
-              Sensitive individuals may want to limit prolonged or heavy outdoor
-              exertion. It is advisable to check air quality updates and take
-              breaks if experiencing discomfort.
-            </p>
-          </a-tab-pane>
-        </a-tabs> -->
       </div>
     </div>
   </div>
@@ -62,7 +46,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { getIP, getAbout, getAQI } from "@/services/index";
-import { getAirQualityFromAQI, getAirQualityAbout } from "@/utils/index"
+import { getAirQualityFromAQI, getAirQualityAbout } from "@/utils/index";
 
 export default Vue.extend({
   name: "IndexPage",
@@ -74,11 +58,11 @@ export default Vue.extend({
       loading: true,
       aqi: 0,
       airQualityData: {
-        quality: '',
-        color: 'gray',
+        quality: "",
+        color: "gray",
       },
-      about: '',
-      advices: ''
+      about: "",
+      advices: "",
     };
   },
 
@@ -105,12 +89,12 @@ export default Vue.extend({
     },
 
     searchCity(city: String) {
-      this.aqi = 0
-      this.airQualityData.color = 'gray'
-      this.about = ''
-      this.advices = ''
+      this.aqi = 0;
+      this.airQualityData.color = "gray";
+      this.about = "";
+      this.advices = "";
       getAQI(city).then((res) => {
-        this.calculateAQI(res?.CO?.aqi)
+        this.calculateAQI(res?.CO?.aqi);
       });
     },
 
@@ -129,7 +113,7 @@ export default Vue.extend({
       ];
 
       if (coConcentration < 0 || coConcentration > 50.4) {
-        this.$notification.error({message: "Invalid CO concentration"})
+        this.$notification.error({ message: "Invalid CO concentration" });
       }
 
       for (let i = 0; i < breakpoints.length - 1; i++) {
@@ -145,11 +129,11 @@ export default Vue.extend({
             ((highAQI - lowAQI) / (highConcentration - lowConcentration)) *
               (coConcentration - lowConcentration) +
             lowAQI;
-           this.aqi = Math.round(aqi)
-           this.airQualityData = getAirQualityFromAQI(this.aqi)
-           const abouts = getAirQualityAbout(this.aqi)
-           this.about = abouts.additionalText
-           this.advices = abouts.advice
+          this.aqi = Math.round(aqi);
+          this.airQualityData = getAirQualityFromAQI(this.aqi);
+          const abouts = getAirQualityAbout(this.aqi);
+          this.about = abouts.additionalText;
+          this.advices = abouts.advice;
         }
       }
     },
@@ -162,25 +146,7 @@ export default Vue.extend({
 .input :deep(.ant-btn-lg) {
   height: 48px !important;
 }
-
-/* .tabs :deep(.ant-tabs-tab:hover) {
-  color: black !important;
-}
-
-.tabs :deep(.ant-tabs-tab) {
-  font-weight: 500;
-}
-.tabs :deep(.ant-tabs-tab-active) {
-  background: black !important;
-  color: white !important;
-}
-
-.tabs :deep(.ant-tabs-tab-active:hover) {
-  background: black !important;
-  color: white !important;
-} */
-
-.bg-red-300{
-  background-color: rgb(239 68 68)
+.bg-red-300 {
+  background-color: rgb(239 68 68);
 }
 </style>
