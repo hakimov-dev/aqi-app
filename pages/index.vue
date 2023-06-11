@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full">
+  <div v-if="!loading" class="flex flex-col w-full">
     <headerNav />
     <div class="header h-[50vh] flex items-center justify-center bg-yellow-300">
       <div class="container mx-auto flex items-center justify-center">
@@ -8,7 +8,7 @@
           v-model:value="value"
           placeholder="Enter a city"
           size="large"
-          @search="onSearch"
+          @search="searchCity(value)"
         >
           <template #enterButton>
             <a-button
@@ -49,7 +49,8 @@ export default Vue.extend({
   data() {
     return {
       value: '',
-      activeKey: '1'
+      activeKey: '1',
+      loading: true,
     }
   },
 
@@ -63,12 +64,16 @@ export default Vue.extend({
       .then(res => {
        this.getIPInfo(res)
       })
+      .finally(() => {
+        this.loading = false
+      })
     },
 
-    getIPInfo(about: object){
+    getIPInfo(about: {ip: ''}){
        getAbout(about?.ip)
          .then(res => {
           this.value = res?.city
+          this.searchCity(this.value)
          })
     },
 
