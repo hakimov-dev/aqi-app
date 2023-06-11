@@ -46,6 +46,13 @@ import { getIP, getAbout } from '@/services/index'
 export default Vue.extend({
   name: "IndexPage",
 
+  data() {
+    return {
+      value: '',
+      activeKey: '1'
+    }
+  },
+
   mounted() {
     this.getIPAdress()
   },
@@ -61,7 +68,7 @@ export default Vue.extend({
     getIPInfo(about: object){
        getAbout(about?.ip)
          .then(res => {
-          console.log(res)
+          this.value = res.city
          })
     }
   },
