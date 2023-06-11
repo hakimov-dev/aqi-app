@@ -1,6 +1,6 @@
 <template>
   <div v-if="!loading" class="flex flex-col w-full">
-    <headerNav />
+    <headerNav :aqi="aqi"/>
     <div class="header h-[50vh] flex items-center justify-center bg-yellow-300">
       <div class="container mx-auto flex flex-col items-center justify-start">
         <a-input-search
@@ -53,6 +53,7 @@ export default Vue.extend({
       value: '',
       activeKey: '1',
       loading: true,
+      aqi: 0,
     }
   },
 

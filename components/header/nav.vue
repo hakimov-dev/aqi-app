@@ -16,6 +16,12 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'navbar-component'
+  name: 'navbar-component',
+  props: {
+    aqi: {
+        type: Number,
+        default: 0,
+    }
+  }
 })
 </script>
