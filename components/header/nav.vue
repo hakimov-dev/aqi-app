@@ -1,5 +1,7 @@
 <template>
-    <div class="h-[10vh] bg-yellow-300 flex items-center justify-center">
+    <div
+       :class="`bg-${data.color}-300`" 
+       class="h-[10vh] flex items-center justify-center">
         <div class="content z-50 container mx-auto flex items-center justify-between px-3 !py-3">
             <nuxt-link to="/">
                 <img class="h-[160px]" src="@/assets/imgs/logo.png" alt="">
@@ -18,9 +20,12 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'navbar-component',
   props: {
-    aqi: {
-        type: Number,
-        default: 0,
+    data: {
+        type: Object,
+        default: {
+            quality: '',
+            color: 'gray'
+        },
     }
   }
 })

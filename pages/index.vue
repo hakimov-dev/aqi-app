@@ -1,7 +1,9 @@
 <template>
   <div v-if="!loading" class="flex flex-col w-full">
-    <headerNav :aqi="aqi" />
-    <div class="header h-[50vh] flex items-center justify-center bg-yellow-300">
+    <headerNav :data="airQualityData" />
+    <div
+    :class="`bg-${airQualityData.color}-300`"  
+    class="header h-[50vh] flex items-center justify-center">
       <div class="container mx-auto flex flex-col items-center justify-start">
         <a-input-search
           class="w-[50%] mx-auto mt-10 input"
@@ -132,7 +134,6 @@ export default Vue.extend({
             lowAQI;
            this.aqi = Math.round(aqi)
            this.airQualityData = getAirQualityFromAQI(this.aqi)
-           console.log(this.airQualityData)
         }
       }
     },
