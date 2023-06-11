@@ -33,7 +33,7 @@
     >
       <div class="container w-[50%] border-2 text-center shadow-xl p-2">
         <h1 class="text-xl font-medium">About of result AQI</h1>
-        <p class="text-base font-medium mt-3">
+        <p class="text-base font-medium my-3">
           {{ about }}
         </p>
       </div>
