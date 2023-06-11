@@ -41,24 +41,28 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { getIP } from '@/services/index'
+import { getIP, getAbout } from '@/services/index'
 
 export default Vue.extend({
   name: "IndexPage",
 
   mounted() {
+    this.getIPAdress()
   },
 
   methods: {
     getIPAdress(){
       getIP()
       .then(res => {
-       this.getIPInfo(res.ip)
+       this.getIPInfo(res)
       })
     },
 
-    getIPInfo(ip: string){
-      
+    getIPInfo(about: object){
+       getAbout(about?.ip)
+         .then(res => {
+          console.log(res)
+         })
     }
   },
 });
