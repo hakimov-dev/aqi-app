@@ -83,7 +83,7 @@ export default Vue.extend({
     searchCity(city: String){
         getAQI(city)
         .then((res) => {
-          console.log(res)
+          this.aqi = res.overall_aqi
         })
     }
   },
