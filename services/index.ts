@@ -9,5 +9,5 @@ export function getAbout(ip: string){
 }
 
 export function getAQI(city: String){
-    return api.get(`${process.env.NUXT_ENV_GET_AQI}${city}&apikey=${process.env.NUXT_ENV_AQI_KEY}`)
+    return api.get(`${process.env.NUXT_ENV_GET_AQI}${city}`)
 }
