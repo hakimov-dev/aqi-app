@@ -68,7 +68,7 @@ export default Vue.extend({
       aqi: 0,
       airQualityData: {
         quality: '',
-        color: '',
+        color: 'gray',
       }
     };
   },
