@@ -69,7 +69,9 @@ export default Vue.extend({
       airQualityData: {
         quality: '',
         color: 'gray',
-      }
+      },
+      about: '',
+      advices: ''
     };
   },
 
@@ -164,5 +166,9 @@ export default Vue.extend({
 .tabs :deep(.ant-tabs-tab-active:hover) {
   background: black !important;
   color: white !important;
+}
+
+.bg-red-300{
+  background-color: rgb(239 68 68)
 }
 </style>
