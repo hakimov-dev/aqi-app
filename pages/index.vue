@@ -146,7 +146,4 @@ export default Vue.extend({
 .input :deep(.ant-btn-lg) {
   height: 48px !important;
 }
-.bg-red-300 {
-  background-color: rgb(239 68 68);
-}
 </style>
