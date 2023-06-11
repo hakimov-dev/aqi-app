@@ -1,15 +1,15 @@
 import axios from 'axios'
+import { notification } from 'ant-design-vue';
+
 
 export const api = axios
 
-export const aqiApi = axios
-
-aqiApi.defaults.headers.common['X-Api-Key'] = `${process.env.NUXT_ENV_AQI_KEY}`
 
 // Error handlers
 
-const errorHandler = (error: Object) => {
-    console.log('An error occurred:', error);
+const errorHandler = (error: {message: ''}) => {
+    console.log('An error occurred:', error.message);
+    notification.error({message: `${error.message}`});
 };
 
 api.interceptors.response.use(
