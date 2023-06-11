@@ -22,11 +22,18 @@
         <h1 class="w-auto ml-0 mt-1 text-xl font-medium float-left">
           AQI: {{ aqi !== 0 ? aqi : "Loading..." }}
         </h1>
+        <h1 class="w-auto ml-0 mt-1 text-xl font-medium float-left">
+          {{ advices }}
+        </h1>
       </div>
     </div>
     <div class="body h-auto py-2 mt-6 flex flex-col items-center justify-center">
-      <div class="container w-[50%] tabs">
-        <a-tabs v-model:activeKey="activeKey" type="card">
+      <div class="container w-[50%] border-2 text-center shadow-xl p-2">
+        <h1 class="text-xl font-medium">About of result AQI</h1>
+        <p class="text-base font-medium mt-3">
+          {{ about }}
+        </p>
+        <!-- <a-tabs v-model:activeKey="activeKey" type="card">
           <a-tab-pane key="1" tab="About air quality">
             <p class="content mx-auto py-3 font-medium text-lg">
               The air quality is generally acceptable, but there may be a
@@ -44,7 +51,7 @@
               breaks if experiencing discomfort.
             </p>
           </a-tab-pane>
-        </a-tabs>
+        </a-tabs> -->
       </div>
     </div>
   </div>
@@ -100,6 +107,8 @@ export default Vue.extend({
     searchCity(city: String) {
       this.aqi = 0
       this.airQualityData.color = 'gray'
+      this.about = ''
+      this.advices = ''
       getAQI(city).then((res) => {
         this.calculateAQI(res?.CO?.aqi)
       });
@@ -154,7 +163,7 @@ export default Vue.extend({
   height: 48px !important;
 }
 
-.tabs :deep(.ant-tabs-tab:hover) {
+/* .tabs :deep(.ant-tabs-tab:hover) {
   color: black !important;
 }
 
@@ -169,7 +178,7 @@ export default Vue.extend({
 .tabs :deep(.ant-tabs-tab-active:hover) {
   background: black !important;
   color: white !important;
-}
+} */
 
 .bg-red-300{
   background-color: rgb(239 68 68)
