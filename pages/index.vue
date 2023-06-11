@@ -1,5 +1,6 @@
 <template>
     <div class="flex flex-col w-full">
+    <headerNav />
     <div class="header h-[50vh] flex items-center justify-center bg-yellow-300">
       <div class="container mx-auto flex items-center justify-center">
         <a-input-search
@@ -32,10 +33,3 @@ export default Vue.extend({
   name: 'IndexPage'
 })
 </script>
-
-
-<style scoped>
-.input :deep(.ant-input), .input :deep(.ant-btn-lg){
-  height: 48px !important;
-}
-</style>
