@@ -41,9 +41,18 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { getIP } from '@/services/index'
 
 export default Vue.extend({
   name: "IndexPage",
+
+  mounted() {
+    console.log('mounted')
+      getIP()
+      .then(res => {
+       console.log(res)
+      })
+  },
 });
 </script>
 
