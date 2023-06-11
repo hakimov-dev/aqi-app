@@ -2,7 +2,7 @@
   <div v-if="!loading" class="flex flex-col w-full">
     <headerNav />
     <div class="header h-[50vh] flex items-center justify-center bg-yellow-300">
-      <div class="container mx-auto flex items-center justify-center">
+      <div class="container mx-auto flex flex-col items-center justify-start">
         <a-input-search
           class="w-[50%] mx-auto mt-10 input"
           v-model:value="value"
@@ -17,6 +17,7 @@
             >
           </template>
         </a-input-search>
+         <h1 class="w-auto ml-0 mt-1 text-xl font-medium float-left">AQI: 1029</h1>
       </div>
     </div>
     <div class="body h-auto py-2 flex flex-col items-center justify-center">
