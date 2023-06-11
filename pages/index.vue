@@ -20,17 +20,19 @@
       </div>
     </div>
     <div class="body h-auto py-2 flex flex-col items-center justify-center">
-      <div class="container text-center">
-        <h1 class="text-3xl font-medium title">About air quality</h1>
-        <p class="content w-[50%] mx-auto py-3 font-medium text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-          architecto quia molestias nam temporibus molestiae aut unde tenetur
-          excepturi porro? Sapiente dolore nihil unde sint explicabo numquam
-          aperiam illo hic ullam quo laboriosam ipsa quaerat dolores voluptas
-          impedit recusandae esse, perferendis pariatur quidem exercitationem
-          possimus repellendus magnam velit? Rem repellat nemo earum, deleniti
-          doloremque a itaque laudantium incidunt molestias? Tempora?
-        </p>
+      <div class="container w-[50%] tabs">
+        <a-tabs v-model:activeKey="activeKey" type="card">
+          <a-tab-pane key="1" tab="About air quality">
+            <p class="content mx-auto py-3 font-medium text-lg">
+              The air quality is generally acceptable, but there may be a moderate level of pollutants present. This may cause minor discomfort for sensitive individuals such as those with respiratory issues, children, and the elderly. Most people can continue with their regular activities without significant adverse effects.
+            </p>
+          </a-tab-pane>
+          <a-tab-pane key="2" tab="Advices">
+            <p class="content mx-auto py-3 font-medium text-lg">
+               Sensitive individuals may want to limit prolonged or heavy outdoor exertion. It is advisable to check air quality updates and take breaks if experiencing discomfort.
+            </p>
+          </a-tab-pane>
+        </a-tabs>
       </div>
     </div>
   </div>
@@ -49,5 +51,22 @@ export default Vue.extend({
 .input :deep(.ant-input),
 .input :deep(.ant-btn-lg) {
   height: 48px !important;
+}
+
+.tabs :deep(.ant-tabs-tab:hover){
+   color: black !important;
+}
+
+.tabs :deep(.ant-tabs-tab){
+  font-weight: 500;
+}
+.tabs :deep(.ant-tabs-tab-active){
+  background: black !important;
+  color: white !important;
+}
+
+.tabs :deep(.ant-tabs-tab-active:hover){
+  background: black !important;
+  color: white !important;
 }
 </style>
