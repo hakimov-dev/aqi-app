@@ -64,6 +64,10 @@ export default Vue.extend({
       activeKey: "1",
       loading: true,
       aqi: 0,
+      airQualityData: {
+        quality: '',
+        color: '',
+      }
     };
   },
 
