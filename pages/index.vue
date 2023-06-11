@@ -41,7 +41,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { getIP, getAbout } from '@/services/index'
+import { getIP, getAbout, getAQI } from '@/services/index'
 
 export default Vue.extend({
   name: "IndexPage",
