@@ -131,6 +131,8 @@ export default Vue.extend({
               (coConcentration - lowConcentration) +
             lowAQI;
            this.aqi = Math.round(aqi)
+           this.airQualityData = getAirQualityFromAQI(this.aqi)
+           console.log(this.airQualityData)
         }
       }
     },

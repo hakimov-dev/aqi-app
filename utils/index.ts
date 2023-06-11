@@ -4,7 +4,7 @@ interface AirQualityData {
     color: string;
   }
   
-  function getAirQualityFromAQI(aqi: number) {
+export function getAirQualityFromAQI(aqi: number) {
     const thresholds: AirQualityData[] = [
       { quality: 'Good', color: 'green' },
       { quality: 'Moderate', color: 'yellow' },
