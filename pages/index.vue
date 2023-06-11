@@ -22,7 +22,7 @@
         </h1>
       </div>
     </div>
-    <div class="body h-auto py-2 flex flex-col items-center justify-center">
+    <div class="body h-auto py-2 mt-6 flex flex-col items-center justify-center">
       <div class="container w-[50%] tabs">
         <a-tabs v-model:activeKey="activeKey" type="card">
           <a-tab-pane key="1" tab="About air quality">
