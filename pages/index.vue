@@ -96,6 +96,8 @@ export default Vue.extend({
     },
 
     searchCity(city: String) {
+      this.aqi = 0
+      this.airQualityData.color = 'gray'
       getAQI(city).then((res) => {
         this.calculateAQI(res?.CO?.aqi)
       });
